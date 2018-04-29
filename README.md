@@ -1,0 +1,2 @@
+# PartyScheduler
+Party Scheduler App
