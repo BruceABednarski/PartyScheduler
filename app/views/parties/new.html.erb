@@ -1,0 +1,109 @@
+<h1>Add a Party</h1>
+<%= flash.notice %>
+<ul>
+	 <% @party.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+     <% end %>
+</ul>
+
+<%= form_for(@party) do |f| %>
+<table>
+	<tr>
+		<td>			
+ <label>Hosted By</label>
+		</td>
+ 		<td>			
+  <%= f.text_field(:host_name) %>
+		</td>
+    </tr>
+   
+	<tr>
+		<td>
+   <label>Host Email</label>
+		</td>
+ 		<td>
+  <%= f.text_field(:host_email) %>
+		</td>
+	</tr>
+	<tr>
+		<td>
+  <label>Number of Guests</label>
+		</td>
+		<td>
+  <%= f.text_field(:numgsts) %>
+		</td>
+   </tr>
+
+	<tr>
+		<td>
+  <label>Guest Names (separate by ',')</label>
+		</td>
+		<td>
+  <%= f.text_area(:guest_names) %>
+		</td>
+   </tr>
+
+	<tr>
+		<td>
+  <label>Venue Name</label>
+		</td>
+		<td>
+  <%= f.text_field(:venue) %>
+		</td>
+   </tr>
+
+	<tr>
+		<td>
+  <label>Venue Location</label>
+		</td>
+		<td>
+  <%= f.text_field(:location) %>
+		</td>
+   </tr>
+
+	<tr>
+		<td>
+  <label>Party Theme</label>
+		</td>
+		<td>
+  <%= f.text_field(:theme) %>
+		</td>
+   </tr>
+
+	<tr>
+		<td>
+  <label>Party Start Time</label>
+		</td>
+		<td>
+  <%= f.datetime_select(:when) %>
+		</td>
+   </tr>
+
+	<tr>
+		<td>
+  <label>Party End Time</label>
+		</td>
+		<td>
+  <%= f.datetime_select(:when_its_over) %>
+		</td>
+   </tr>
+
+	<tr>
+		<td>
+  <label>Description</label>
+		</td>
+		<td>
+  <%= f.text_area(:descript) %>
+		</td>
+   </tr>
+
+	<tr>
+		<td>
+		</td>
+		<td>
+  <%= f.submit %>
+		</td>
+   </tr>
+
+  </table>
+<%- end %>
